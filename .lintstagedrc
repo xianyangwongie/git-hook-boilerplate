@@ -1,3 +1,4 @@
 {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": ["eslint --fix", "git add"],
+    "*.ts": ["tslint 'src/**/*.ts'", "git add"]
 }
