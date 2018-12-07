@@ -10,8 +10,8 @@ if [ -z "$BRANCHES_TO_SKIP" ]; then
   BRANCHES_TO_SKIP=()
 fi
 
-# Get branch name and description
-BRANCH_NAME=$(git branch | grep '*' | sed 's/* //')
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+BRANCH_NAME="${BRANCH_NAME##*/}"
 
 # Branch name should be excluded from the prepend
 BRANCH_EXCLUDED=$(printf "%s\n" "${BRANCHES_TO_SKIP[@]}" | grep -c "^$BRANCH_NAME$")
