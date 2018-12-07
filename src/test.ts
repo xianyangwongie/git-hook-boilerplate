@@ -1,5 +1,5 @@
 function helloWorldTS() {
-	alert("hello");
+    alert("hello");
 }
 
 helloWorldTS();
